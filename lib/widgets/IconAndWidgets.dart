@@ -1,0 +1,39 @@
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, file_names
+
+import 'package:flutter/material.dart';
+import 'package:dicoding_project/utilities/dimension.dart';
+import 'package:dicoding_project/widgets/smallText.dart';
+
+class IconAndWidgets extends StatelessWidget {
+  final String Text;
+  final IconData iconData;
+  final Color txtColor;
+  final Color iconColor;
+  const IconAndWidgets({
+    Key? key,
+    required this.Text,
+    required this.iconData,
+    required this.txtColor,
+    required this.iconColor,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          iconData,
+          color: iconColor,
+          size: Dimensions.iconSize16,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        SmallText(
+          text: Text,
+          textColor: txtColor,
+        ),
+      ],
+    );
+  }
+}
